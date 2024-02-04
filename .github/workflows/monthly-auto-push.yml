@@ -1,6 +1,8 @@
 name: Monthly Auto Push
 
 on:
+  workflow_dispatch:
+    
   schedule:
     - cron: '0 0 1 * *'  # 每个月的第一天执行，你可以根据需要修改cron表达式
 
