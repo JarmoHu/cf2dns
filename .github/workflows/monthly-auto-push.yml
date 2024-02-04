@@ -1,9 +1,6 @@
 name: Monthly Auto Push
 
 on:
-  push:
-    branches: 
-      - master
   schedule:
     - cron: '0 0 1 * *'  # 每个月的第一天执行，你可以根据需要修改cron表达式
 
