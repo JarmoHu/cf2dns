@@ -1,0 +1,27 @@
+name: Monthly Auto Push
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 每个月的第一天执行，你可以根据需要修改cron表达式
+
+jobs:
+  auto-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Git
+      run: |
+        git config --global user.email "actions@example.com"
+        git config --global user.name "GitHub Actions"
+
+    - name: Commit and Push Changes
+      run: |
+        # 在这里添加需要自动执行的命令，比如生成一些文件、修改文件等
+        echo $RANDOM > automated-file.txt
+
+        git add .
+        git commit -m "Automated monthly commit"
+        git push
